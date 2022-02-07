@@ -1,0 +1,223 @@
+{
+  "images": "personnages/",
+  "ligne": "3",
+  "colonne": "8",
+  "possibilites": {
+    "0": {
+      "fichier": "samuel.jpg",
+      "prenom": "Samuel",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "oui",
+      "chauve": "oui",
+      "chapeau": "non"
+    },
+    "1": {
+      "fichier": "leon.jpg",
+      "prenom": "Leon",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "oui",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "2": {
+      "fichier": "simon.jpg",
+      "prenom": "Simon",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "oui",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "3": {
+      "fichier": "martin.jpg",
+      "prenom": "Martin",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "oui"
+    },
+    "4": {
+      "fichier": "luc.jpg",
+      "prenom": "Luc",
+      "genre": "homme",
+      "cheveux": "noir",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "5": {
+      "fichier": "clara.jpg",
+      "prenom": "Clara",
+      "genre": "femme",
+      "cheveux": "roux",
+      "lunettes": "oui",
+      "chauve": "non",
+      "chapeau": "oui"
+    },
+    "6": {
+      "fichier": "anita.jpg",
+      "prenom": "Anita",
+      "genre": "femme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "7": {
+      "fichier": "alfred.jpg",
+      "prenom": "Alfred",
+      "genre": "homme",
+      "cheveux": "roux",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "8": {
+      "fichier": "suzane.jpg",
+      "prenom": "Suzane",
+      "genre": "femme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "9": {
+      "fichier": "romeo.jpg",
+      "prenom": "Romeo",
+      "genre": "homme",
+      "cheveux": "marron",
+      "lunettes": "non",
+      "chauve": "oui",
+      "chapeau": "non"
+    },
+    "10": {
+      "fichier": "omar.jpg",
+      "prenom": "Omar",
+      "genre": "homme",
+      "cheveux": "roux",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "11": {
+      "fichier": "manu.jpg",
+      "prenom": "Manu",
+      "genre": "homme",
+      "cheveux": "marron",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "12": {
+      "fichier": "lucas.jpg",
+      "prenom": "Lucas",
+      "genre": "homme",
+      "cheveux": "roux",
+      "lunettes": "non",
+      "chauve": "oui",
+      "chapeau": "non"
+    },
+    "13": {
+      "fichier": "mario.jpg",
+      "prenom": "Mario",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "14": {
+      "fichier": "jeremie.jpg",
+      "prenom": "Jeremie",
+      "genre": "homme",
+      "cheveux": "marron",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "oui"
+    },
+    "15": {
+      "fichier": "max.jpg",
+      "prenom": "Max",
+      "genre": "homme",
+      "cheveux": "noir",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "16": {
+      "fichier": "timeo.jpg",
+      "prenom": "Timeo",
+      "genre": "homme",
+      "cheveux": "noir",
+      "lunettes": "oui",
+      "chauve": "oui",
+      "chapeau": "non"
+    },
+    "17": {
+      "fichier": "oscar.jpg",
+      "prenom": "Oscar",
+      "genre": "homme",
+      "cheveux": "marron",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "18": {
+      "fichier": "eric.jpg",
+      "prenom": "Eric",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "20": {
+      "fichier": "maria.jpg",
+      "prenom": "Maria",
+      "genre": "femme",
+      "cheveux": "marron",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "oui"
+    },
+    "21": {
+      "fichier": "tony.jpg",
+      "prenom": "Tony",
+      "genre": "homme",
+      "cheveux": "roux",
+      "lunettes": "non",
+      "chauve": "oui",
+      "chapeau": "non"
+    },
+    "22": {
+      "fichier": "felix.jpg",
+      "prenom": "Felix",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "oui"
+    },
+    "23": {
+      "fichier": "charlie.jpg",
+      "prenom": "Charlie",
+      "genre": "homme",
+      "cheveux": "blanc",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    },
+    "24": {
+      "fichier": "anna.jpg",
+      "prenom": "Anna",
+      "genre": "femme",
+      "cheveux": "noir",
+      "lunettes": "non",
+      "chauve": "non",
+      "chapeau": "non"
+    }
+  }
+}
