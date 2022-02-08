@@ -1,0 +1,11 @@
+# Un objet en POO est de type dict en python, donc pour caractériser les objets on peut aussi dire "dict".
+
+# Il ya une différence entre les fonctions load(sert a charger un fichier json dans un objet),
+  et loads(sert a charger une chaine dans un objet)
+
+# Autre diff entre les fonctions dump(Sert à modifier le contenu d'un fichier json, renvoie un OBJET) et dumps
+  (Sert a modifier le contenu d'un objet, renvoie un STRING).
+# Pour utiliser ces fonctions (càd modifier le contenu d'un objet ou d'un fichier .json (contenant un objet json)):
+  Ces foctions peuvent prendre jusqu'à 3 paramètres -> dump(NomObjetJson, Indent=Int, sort_keys=Boolean)
+  Indent -> Permet de modifier le contenu de l'objet en ajoutant des tabulations. Permet de rendre l'objet en question plus lisible.
+  sort_keys -> Permet de ranger les clefs par ordre alphabétique/croissant.
