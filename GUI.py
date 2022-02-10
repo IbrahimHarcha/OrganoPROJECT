@@ -45,13 +45,20 @@ class Widget2():
     def __init__(self, parent):
         self.gui(parent)
 
+    ddef __init__(self, parent):
+        self.gui(parent)
+
     def gui(self, parent):
         if parent == 0:
             self.w1 = Tk()
-            self.w1.geometry('500x450')
+            self.w1.geometry('500x430')
         else:
             self.w1 = Frame(parent)
             self.w1.place(x = 0, y = 0, width = 500, height = 450)
+        self.widget1 = Frame(self.w1)
+        self.widget1.place(x = 10, y = 20, width = 380, height = 360)
+        self.image1 = Canvas(self.widget1, bg = 'white')
+        self.image1.place(x = 9, y = 9, width = 362, height = 362) #Canvas dans la deuxieme fenetre pour intégré les images
         self.check1 = Checkbutton(self.w1, text = "mode facile", font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
         self.check1.place(x = 410, y = 50, width = 90, height = 22)
         self.check1.deselect()
