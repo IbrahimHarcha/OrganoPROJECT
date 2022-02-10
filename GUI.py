@@ -60,12 +60,12 @@ class Widget2():
         self.check3.place(x = 410, y = 70, width = 90, height = 22)
         self.check3.deselect()
         self.check3['command'] = self.vsIA
-        self.spin2 = Spinbox(self.w1, from_ = 1, to = 5, increment = 1, value = 1, font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
+        self.spin2 = Spinbox(self.w1, from_ = 1, to = 5, increment = 1,  font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
         self.spin2.place(x = 410, y = 20, width = 30, height = 22)
         self.spin2['command'] = self.V1
         self.label1 = Label(self.w1, text = "X", font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
         self.label1.place(x = 440, y = 20, width = 90, height = 22)
-        self.spin3 = Spinbox(self.w1, from_ = 1, to = 5, increment = 1, value = 1, font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
+        self.spin3 = Spinbox(self.w1, from_ = 1, to = 5, increment = 1, font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
         self.spin3.place(x = 450, y = 20, width = 40, height = 22)
         self.spin3['command'] = self.V2
         self.label3 = Label(self.w1, text = "Nombre personnages", font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
@@ -99,13 +99,17 @@ class Widget2():
         print('vsIA')
 
     def V1(self):
-        print('V1')
+        v1=self.spin2.get()
+        print(v1)
 
     def V2(self):
-        print('V2')
+        v2=self.spin3.get()
+        print(v2)
 
     def NouvellePartie(self):
-        print('NouvellePartie')
+        def NouvellePartie(self):
+        self.w1.destroy()
+        a = Widget2(0)
 
     def QuestionBox(self, e):
         print('QuestionBox')
