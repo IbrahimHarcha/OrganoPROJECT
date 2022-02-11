@@ -57,8 +57,10 @@ class Widget2():
             self.w1.place(x = 0, y = 0, width = 500, height = 450)
         self.widget1 = Frame(self.w1)
         self.widget1.place(x = 10, y = 20, width = 380, height = 360)
-        self.image1 = Canvas(self.widget1, bg = 'white')
-        self.image1.place(x = 9, y = 9, width = 362, height = 362) #Canvas dans la deuxieme fenetre pour intégré les images
+        self.widget1.rowconfigure(0, weight=1)
+        self.widget1.columnconfigure(0, weight=1)
+        self.button4 = Button(self.widget1, text='Premiere Case du tableau Intégré', font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
+        self.button4.grid(row=0, column=0, sticky="nsew") #Tableau Grid ///// 
         self.check1 = Checkbutton(self.w1, text = "mode facile", font = tkinter.font.Font(family = "MS Shell Dlg 2", size = 8), cursor = "arrow", state = "normal")
         self.check1.place(x = 410, y = 50, width = 90, height = 22)
         self.check1.deselect()
