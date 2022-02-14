@@ -8,8 +8,8 @@ class Root:
 
 	def widgets(self):
 	
-		button2 = tk.Button(self.root,text="jouer", bg="blue", fg = "white", font=("Pristina", 20))
-		button2.place(anchor=tk.W, relheight=0.25, relwidth=0.25, relx=0.4, rely= 0.4)
+		button = tk.Button(self.root,text="jouer", bg="blue", fg = "white", font=("Pristina", 20))
+		button.place(anchor=tk.W, relheight=0.25, relwidth=0.25, relx=0.4, rely= 0.4)
 
 
 def main():
