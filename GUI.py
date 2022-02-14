@@ -13,27 +13,24 @@ class Widget1():
         if parent == 0:
             self.w1 = Tk()
             self.w1.geometry('500x450')
+            self.w1.resizable(width=False, height=False)
+            self.w1.configure(bg="blue")
+            self.w1.title('Qui  Est - Ce ?')
+           
         else:
             self.w1 = Frame(parent)
+            
             self.w1.place(x = 0, y = 0, width = 500, height = 450)
-        self.label1 = Label(self.w1, text = "Qui es ce ?", font = tkinter.font.Font(family = "MS PGothic", size = 48), cursor = "arrow", state = "normal")
-        self.label1.place(x = 110, y = 30, width = 310, height = 132)
-        self.button1 = Button(self.w1, text = "Jouer", font = tkinter.font.Font(family = "Pristina", size = 28), cursor = "arrow", state = "normal")
-        self.button1.place(x = 150, y = 260, width = 220, height = 102)
-        self.button1['command'] = self.Jouer
+        self.label1 = Label(self.w1, text = "Qui  Est - Ce ? ", font = tkinter.font.Font(family = "Showcard Gothic", size = 48, weight = "normal"),bg ='blue', cursor = "arrow", state = "normal")
+        self.label1.pack()
+        
+        
+        photo = PhotoImage(file =  r"C:\Users\Megaport\Documents\FAC\testProg\Jouer.png")
+        self.button4 = Button(self.w1, image=photo,bg="blue",activebackground = "blue", highlightbackground="blue",)
+        self.button4.place(x = 150, y = 260, width = 220, height = 102,)
+        self.button4.image = photo
+        self.button4['command'] = self.Jouer
 
-    
-
-    def Jouer(self):
-        print('Jouer')
-
-        self.label1.place(x = 180, y = 40, width = 170, height = 132)
-        self.button1 = Button(self.w1, text = "Jouer", font = tkinter.font.Font(family = "Pristina", size = 28, weight = "normal"), cursor = "arrow", state = "normal")
-        self.button1.place(x = 150, y = 260, width = 220, height = 102)
-        self.button1['command'] = self.Jouer
-        self.w1.destroy()
-        a = Widget2(0)
-        a.w1.mainloop()
         
 
     
