@@ -1,14 +1,65 @@
 from tkinter import *
-import json
-from turtle import width
+from tkinter.ttk import Progressbar
 from tkinter.ttk import Combobox
+from tkinter.ttk import Notebook
+import tkinter.font
+import json
+
+with open("personnage.json") as mon_fichier:
+    data = json.load(mon_fichier)
+
+
+
+class Widget1():
+    def __init__(self, parent):
+        self.gui(parent)
+
+    def gui(self, parent):
+        if parent == 0:
+            self.w1 = Tk()
+            self.w1.geometry('500x450')
+            self.w1.resizable(width=False, height=False)
+            
+            self.w1.title('Qui  Est - Ce ?')
+           
+        else:
+            self.w1 = Frame(parent)
+            
+            self.w1.place(x = 0, y = 0, width = 500, height = 450)
+        self.label1 = Label(self.w1, text = "Qui  Est - Ce ? ", font = tkinter.font.Font(family = "Showcard Gothic", size = 48, weight = "normal"), cursor = "arrow", state = "normal")
+        self.label1.pack()
+        
+        
+        photo = PhotoImage(file =  r"C:\Users\Megaport\Documents\FAC\testProg\Jouer.png")
+        self.button4 = Button(self.w1, image=photo,)
+        self.button4.place(x = 150, y = 260, width = 220, height = 102,)
+        self.button4.image = photo
+        self.button4['command'] = self.Jouer
+
+        
+        
+        
+
+    def Jouer(self):
+        print('Jouer')
+        
+
+        
+        self.w1.destroy()
+        a = app(0)
+        a.w1.mainloop()
+        
+
+a = Widget1(0)
+
+a.w1.mainloop()
 
 app = Tk()
 app.title("Qui est-ce ?")
 app.geometry("1200x620+250+100")
 # app.minsize(1100,620)
 
-with open("personnage2.json") as mon_fichier:
+with open("personnage.json") as mon_fichier:
     data = json.load(mon_fichier)
 
 
@@ -19,18 +70,27 @@ class Grid(Frame):
         width=100
         height=150
         s=0
+        v=0
         self.list=[]
+        def Action(P1):
+            def doit():
+                print(P1)
+            return doit 
         for i in range(0,l):
             for j in range(0,c):
-                str="img/personnages/"+data["possibilites"][s]["fichier"]
+                str=r"C:\Users\Megaport\Documents\FAC\testProg\personnages/"+data["possibilites"][s]["fichier"]
                 self.list.append(PhotoImage(file=str))
-                self.canvas=Canvas(root,width=width,height=height,bg='white')
-                self.canvas.create_image(width/2,height/2,image=self.list[s])
-                self.canvas.grid(row=i,column=j,sticky="nsew")
+                self.buttonI = Button(root, image=self.list[s],command=Action(f"{v}"))
+                
+                v+=1
+                
+                
+                self.buttonI.grid(row=i,column=j,sticky="nsew")
                 s+=1
             Grid.rowconfigure(root,i,weight=1)
         for j in range (0,c):
             Grid.columnconfigure(root,j,weight=1)    
+
 
 
 class Frame1():
