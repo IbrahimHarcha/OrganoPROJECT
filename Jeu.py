@@ -74,13 +74,15 @@ class Grid(Frame):
         self.list=[]
         def Action(P1):
             def doit():
-                print(P1)
+                
+                print(data["possibilites"][P1]["prenom"])
+                
             return doit 
         for i in range(0,l):
             for j in range(0,c):
                 str=r"C:\Users\Megaport\Documents\FAC\testProg\personnages/"+data["possibilites"][s]["fichier"]
                 self.list.append(PhotoImage(file=str))
-                self.buttonI = Button(root, image=self.list[s],command=Action(f"{v}"))
+                self.buttonI = Button(root, image=self.list[s],command=Action(v))
                 
                 v+=1
                 
