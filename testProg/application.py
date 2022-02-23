@@ -1,3 +1,4 @@
+from distutils import command
 from operator import index
 from tkinter import *
 from tkinter.ttk import Progressbar
@@ -5,6 +6,8 @@ from tkinter.ttk import Combobox
 from tkinter.ttk import Notebook
 import tkinter.font
 import json
+from turtle import bgcolor
+from venv import create
 
 with open("personnage.json") as mon_fichier:
     data = json.load(mon_fichier)
@@ -27,7 +30,7 @@ class Widget1():
             self.w1 = Frame(parent)
             
             self.w1.place(x = 0, y = 0, width = 500, height = 450)
-        self.label1 = Label(self.w1, text = "Qui  Est - Ce ? ", font = tkinter.font.Font(family = "Showcard Gothic", size = 48, weight = "normal"), cursor = "arrow", state = "normal")
+        self.label1 = Label(self.w1, text = "Qui  Est - Ce ? ", font = tkinter.font.Font(family = "Showcard Gothic", size = 48, weight = "normal"), cursor = "arrow", state = "normal", bg='#F2D5D5')
         self.label1.pack()
         
         
@@ -37,14 +40,8 @@ class Widget1():
         self.button4.image = photo
         self.button4['command'] = self.Jouer
 
-        
-        
-        
-
     def Jouer(self):
         print('Jouer')
-        
-
         
         self.w1.destroy()
         a = app(0)
@@ -52,9 +49,8 @@ class Widget1():
         
 
 a = Widget1(0)
-
+a.w1.configure(bg='#F2D5D5')
 a.w1.mainloop()
-
 
 
 app = Tk()
@@ -81,6 +77,7 @@ class Grid(Frame):
         c=int(data["colonne"])
         width=100
         height=150
+        bgcolor='#F2D5D5'
         s=0
         v=0
         self.list=[]
@@ -99,16 +96,11 @@ class Grid(Frame):
                     for j in range(0,c):
                         str=r"C:\Users\Megaport\Documents\FAC\testProg\personnages/"+data["possibilites"][P1]["fichier"]#############################Chemin a modifier
                         
-                
-                
                 self.list.append(PhotoImage(file=str))
                 self.buttonZ = Button(root,image=self.list[P1],command=Action(P1,P2,P3))
                 self.buttonZ.grid(row=P2,column=P3,sticky="nsew")    
             return doit 
-        
-     
-               
-        
+       
         def Action(P1,P2,P3):
             
             def doit():
@@ -120,9 +112,7 @@ class Grid(Frame):
                         str=r"C:\Users\SCD UM\Desktop\testprog\personnagesx/"+data2["possibilites"][a]["fichier"]#############################Chemin a modifier
                         a=a+1
                         self.list2.append(PhotoImage(file=str))
-                        
-                
-                        
+                   
                 self.buttonZ = Button(root,image=self.list2[P1],command=Action2(P1,P2,P3))
                 self.buttonZ.grid(row=P2,column=P3,sticky="nsew") 
                 print(a)
@@ -138,35 +128,38 @@ class Grid(Frame):
                 s+=1
             Grid.rowconfigure(root,i,weight=1)
         for j in range (0,c):
-            Grid.columnconfigure(root,j,weight=1)    
-
+            Grid.columnconfigure(root,j,weight=1)   
+            
+     
 
 class Frame1():
     def __init__(self,root):
-        frame=Frame(root,padx=50,pady=50,bd=1)
+        frame=Frame(root,padx=50,pady=50,bd=1,bg='#F2D5D5')
         frame.grid(row=0,column=1)
         
         self.b=Button(frame,text="Jouer en mode solo",command=self.solo,font=("MS PGothic", 12),bg='beige')
         self.b.grid(row=0,column=0)
-        self.lvide=Label(frame,text="")
+        self.lvide=Label(frame,text="",bg='#F2D5D5')
         self.lvide.grid(row=1,column=0)
         self.b2=Button(frame,text="Jouer contre l'ordinateur",command=self.ordi,font=("MS PGothic", 12),bg='beige')
         self.b2.grid(row=2,column=0)
-        self.lvide2=Label(frame,text="")
+        self.lvide2=Label(frame,text="",bg='#F2D5D5')
         self.lvide2.grid(row=3,column=0)
 
-        self.lbl=Label(frame,text="Nombres de lignes : ",font=("MS PGothic", 12))
+        self.lbl=Label(frame,text="Nombres de lignes : ",font=("MS PGothic", 12),bg='#F2D5D5')
         self.sp=Spinbox(frame,from_=0,to=3, width=3,justify='center',state='readonly')
         self.lbl.grid(row=4,column=0)
         self.sp.grid(row=4,column=1)
-        self.lvide3=Label(frame,text="")
+        self.lvide3=Label(frame,text="",bg='#F2D5D5')
         self.lvide3.grid(row=5,column=0)
-        self.lbl2=Label(frame,text="Nombres de colonnes : ",font=("MS PGothic", 12))
+        self.lbl2=Label(frame,text="Nombres de colonnes : ",font=("MS PGothic", 12),bg='#F2D5D5')
         self.sp2=Spinbox(frame,from_=0,to=8, width=3,justify='center',state='readonly')
         self.lbl2.grid(row=6,column=0)
         self.sp2.grid(row=6,column=1)  
-        self.lvide4=Label(frame,text="")
+        self.lvide4=Label(frame,text="",bg='#F2D5D5')
         self.lvide4.grid(row=7,column=0) 
+        self.btn4=Button(frame,text="Mode Triche",command=self.modetriche,font=("MS PGothic", 12),bg='beige')
+        self.btn4.grid(row=15,column=0)
 
         for i in range (0,8):
             Grid.rowconfigure(frame,i,weight=1)
@@ -176,20 +169,27 @@ class Frame1():
         pass
     def ordi():
         pass
+    def modetriche():
+        pass
+
 
 class Frame2():
     def __init__(self,root):
-        frame=Frame(root,padx=100,pady=1,bd=1)
+        frame=Frame(root,padx=100,pady=1,bd=1,bg='#F2D5D5')
         frame.grid(row=1,column=0)
         self.list=[]
-        self.lbl=Label(frame,text="Votre question :",font=("Arial", 15))
+        self.lbl=Label(frame,text="Votre question :",font=("Arial", 12),bg='#F2D5D5')
         self.lbl.grid(row=0,column=0)
         self.btn=Button(frame,text="Ajouter",command=self.ajouter,font=("MS PGothic", 12),bg='beige')
-        self.btn.grid(row=2,column=0)
+        self.btn.grid(row=1,column=0)
         self.btn2=Button(frame,text="Enlever",command=self.enlever,font=("MS PGothic", 12),bg='beige')
-        self.btn2.grid(row=2,column=1)
-        self.btn3=Button(frame,text="Valider",command=self.valider,font=("MS PGothic", 15),bg='beige')
-        self.btn3.grid(row=4,column=4)
+        self.btn2.grid(row=2,column=0)
+        self.btn3=Button(frame,text="Valider",command=self.valider,font=("MS PGothic", 12),bg='beige')
+        self.btn3.grid(row=4,column=0)
+        self.btn3=Button(frame,text="Choisir",command=self.choisir,font=("MS PGothic", 12),bg='beige')
+        self.btn3.grid(row=2,column=7)
+
+        
     
         list1= []
         for key, value in data["possibilites"][0].items():
@@ -197,7 +197,7 @@ class Frame2():
                 list1.append(key)
         self.cbb1 = Combobox(frame, values=list1, state="readonly")
         self.cbb1.grid(row=0,column=5)
-        self.lvide2=Label(frame,text="   ")
+        self.lvide2=Label(frame,text="   ",bg='#F2D5D5')
         self.lvide2.grid(row=0,column=6)
         self.cbb2=Combobox(frame,values=["oui","non"])
         self.cbb2.grid(row=0,column=7)
@@ -209,7 +209,8 @@ class Frame2():
                 list2.append(key)
         self.cbb3 = Combobox(frame, values=list2, state="readonly")
         self.cbb3.grid(row=2,column=5)
-     
+        
+
               
         """def newselection(event):
             print(self.current_table1.get())
@@ -242,16 +243,9 @@ class Frame2():
         self.current_table1.get()"""
         
         
-        
-        
-        
-        
         self.cbb5=Combobox(frame,values=["Or","And"])
         self.cbb5.grid(row=1,column=4)
         
-
-        self.btn4=Button(frame,text="Mode Triche",command=self.modetriche,font=("MS PGothic", 12),bg='beige')
-        self.btn4.grid(row=3,column=8)
 
 
         for i in range (0,5):
@@ -265,16 +259,17 @@ class Frame2():
     def enlever():
         pass
     def valider(self):
-         print(self.current_table2.get())
-         print(self.current_table1.get()) 
-    def modetriche():
+         """print(self.current_table2.get())
+         print(self.current_table1.get()) """
+    def choisir():
         pass
+        
     
 
 
         
 
-mainframe = Frame(app,padx=10,pady=10,bg='beige', borderwidth=1)
+mainframe = Frame(app,padx=10,pady=10,bg='#F2D5D5', borderwidth=1)
 mainframe.grid(row=0,column=0)
 t=Grid(mainframe)
 h=Frame1(app)
@@ -285,4 +280,6 @@ Grid.columnconfigure(app,0,weight=1)
 Grid.columnconfigure(app,1,weight=1)
 Grid.rowconfigure(app,1,weight=1)
 
+
+app.configure(bg='#F2D5D5')
 app.mainloop()
