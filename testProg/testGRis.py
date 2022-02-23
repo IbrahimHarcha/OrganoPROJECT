@@ -169,18 +169,16 @@ class Frame1():
             Grid.rowconfigure(frame,i,weight=1)
         for j in range(0,2):
             Grid.columnconfigure(frame,j,weight=1)
-    def solo(self):
+    def solo():
         pass
-    def ordi(self):
+    def ordi():
         pass
-    
+
 class Frame2():
     def __init__(self,root):
         frame=Frame(root,padx=100,pady=1,bd=1)
         frame.grid(row=1,column=0)
-        
-        
-
+        self.list=[]
         self.lbl=Label(frame,text="Votre question :",font=("Arial", 15))
         self.lbl.grid(row=0,column=0)
         self.btn=Button(frame,text="Ajouter",command=self.ajouter,font=("MS PGothic", 12),bg='beige')
@@ -189,40 +187,82 @@ class Frame2():
         self.btn2.grid(row=2,column=1)
         self.btn3=Button(frame,text="Valider",command=self.valider,font=("MS PGothic", 15),bg='beige')
         self.btn3.grid(row=4,column=4)
-        self.box_value = StringVar()
-        self.cbb1=Combobox(frame,textvariable=self.box_value)
-        self.cbb1.bind("<<ComboboxSelected>>", self.justamethod())
+    
+
+        self.cbb1=Combobox(frame,values=["lunettes","chauve","chapeau"])
         self.cbb1.grid(row=0,column=5)
-        self.lvide2=Label(frame,text="  ")
+        self.lvide2=Label(frame,text="   ")
         self.lvide2.grid(row=0,column=6)
-        self.cbb2=Combobox(frame,values=["genre","cheveux","lunettes","chauve","chapeau"])
-        self.cbb1['values'] = ["genre","cheveux","lunettes","chauve","chapeau"] 
-         # Faire algo !
+        self.cbb2=Combobox(frame,values=["oui","non"])
         self.cbb2.grid(row=0,column=7)
+        self.current_table1 = StringVar()
+        self.cbb3=Combobox(frame)
+        self.cbb3.grid(row=2,column=5)
+        self.cbb3.config(textvariable = self.current_table1, state = "readonly",values=["genre","cheveux"])
+        
+              
+        def newselection(event):
+            print(self.current_table1.get())
+            if ((self.current_table1.get())=="genre"):
+                self.list.clear()
+                
+    
+                self.list.append(["homme"])
+                self.list.append(["femme"])
+                self.cbb4=Combobox(frame)
+                self.current_table2 = StringVar()
+                self.cbb4.config(textvariable = self.current_table2, state = "readonly", values = self.list)
+                self.cbb4.grid(row=2,column=7)
+                
+            if ((self.current_table1.get())=="cheveux"):
+                self.list.clear()
+                self.list.append(["marron"])
+                self.list.append(["noire"])
+                self.list.append(["blanc"])
+                self.list.append(["roux"])
+                self.cbb4=Combobox(frame)
+                self.current_table2 = StringVar()
+                self.cbb4.config(textvariable = self.current_table2, state = "readonly", values = self.list)
+                self.cbb4.grid(row=2,column=7)
+                
+        
+        self.cbb3.bind("<<ComboboxSelected>>", newselection)
+        
+        
+        self.current_table1.get()
+        
+        
+        
+        
+        
+        
+        self.cbb5=Combobox(frame,values=["Or","And"])
+        self.cbb5.grid(row=1,column=4)
         
 
         self.btn4=Button(frame,text="Mode Triche",command=self.modetriche,font=("MS PGothic", 12),bg='beige')
         self.btn4.grid(row=3,column=8)
+
 
         for i in range (0,5):
             Grid.rowconfigure(frame,i,weight=1)
         for j in range(0,9):
             Grid.columnconfigure(frame,j,weight=1)
 
-    def justamethod(self):
-        a=0
-    
-        print ("biteéé&'&")
         
-        
-    def ajouter(self):
+    def ajouter():
         pass
-    def enlever(self):
+    def enlever():
         pass
     def valider(self):
-        pass     
-    def modetriche(self):
-        pass   
+         print(self.current_table2.get())
+         print(self.current_table1.get()) 
+    def modetriche():
+        pass
+    
+
+
+        
 
 mainframe = Frame(app,padx=10,pady=10,bg='beige', borderwidth=1)
 mainframe.grid(row=0,column=0)
