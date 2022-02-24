@@ -146,7 +146,7 @@ class Frame1():
         self.lvide2=Label(frame,text="",bg='#F2D5D5')
         self.lvide2.grid(row=3,column=0)
 
-        self.lbl=Label(frame,text="Nombres de lignes : ",font=("MS PGothic", 12),bg='#F2D5D5')
+        self.lbl=Label(frame,text="Nombre de lignes : ",font=("MS PGothic", 12),bg='#F2D5D5')
         self.sp=Spinbox(frame,from_=0,to=3, width=3,justify='center',state='readonly')
         self.lbl.grid(row=4,column=0)
         self.sp.grid(row=4,column=1)
