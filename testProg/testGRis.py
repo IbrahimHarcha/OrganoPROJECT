@@ -33,7 +33,7 @@ class Widget1():
         self.label1.pack()
         
         
-        photo = PhotoImage(file =  r"C:\Users\Megaport\Documents\FAC\testProg\Jouer.png")#############################Chemin a modifier
+        photo = PhotoImage(file =  r"C:\Users\SCD UM\Documents\FAC\testProg\Jouer.png")#############################Chemin a modifier
         self.button4 = Button(self.w1, image=photo,)
         self.button4.place(x = 150, y = 260, width = 220, height = 102,)
         self.button4.image = photo
@@ -89,7 +89,7 @@ class Grid(Frame):
                 print(data["possibilites"][P1]["prenom"]+"  ")
                 for i in range(0,l):
                     for j in range(0,c):
-                        str=r"C:\Users\Megaport\Documents\FAC\testProg\personnages/"+data["possibilites"][P1]["fichier"]#############################Chemin a modifier
+                        str=r"C:\Users\SCD UM\Documents\FAC\testProg\personnages/"+data["possibilites"][P1]["fichier"]#############################Chemin a modifier
                         
                 
                 
@@ -109,7 +109,7 @@ class Grid(Frame):
                 for i in range(0,l):
                     for j in range(0,c):
                         
-                        str=r"C:\Users\Megaport\Documents\FAC\testProg\personnagesx/"+data2["possibilites"][a]["fichier"]#############################Chemin a modifier
+                        str=r"C:\Users\SCD UM\Documents\FAC\testProg\personnagesx/"+data2["possibilites"][a]["fichier"]#############################Chemin a modifier
                         a=a+1
                         self.list2.append(PhotoImage(file=str))
                         
@@ -123,7 +123,7 @@ class Grid(Frame):
         
         for i in range(0,l):
             for j in range(0,c):
-                str=r"C:\Users\Megaport\Documents\FAC\testProg\personnages/"+data["possibilites"][s]["fichier"]#############################Chemin a modifier
+                str=r"C:\Users\SCD UM\Documents\FAC\testProg\personnages/"+data["possibilites"][s]["fichier"]#############################Chemin a modifier
                 self.list.append(PhotoImage(file=str))
                 self.buttonI = Button(root,image=self.list[s],command=Action((s),i,j))
                 
@@ -140,6 +140,7 @@ class Grid(Frame):
 
 class Frame1():
     def __init__(self,root):
+        
         frame=Frame(root,padx=50,pady=50,bd=1)
         frame.grid(row=0,column=1)
         
@@ -176,9 +177,11 @@ class Frame1():
 
 class Frame2():
     def __init__(self,root):
+        n=int(data["nbCara"])
         frame=Frame(root,padx=100,pady=1,bd=1)
         frame.grid(row=1,column=0)
         self.list=[]
+        self.list2=[]
         self.lbl=Label(frame,text="Votre question :",font=("Arial", 15))
         self.lbl.grid(row=0,column=0)
         self.btn=Button(frame,text="Ajouter",command=self.ajouter,font=("MS PGothic", 12),bg='beige')
@@ -196,38 +199,41 @@ class Frame2():
         self.cbb2=Combobox(frame,values=["oui","non"])
         self.cbb2.grid(row=0,column=7)
         self.current_table1 = StringVar()
+        
+        for i in range(0,n):
+             self.list2.append(data["caracteristique"][i]["nom"])
+         
+        print(self.list2)
         self.cbb3=Combobox(frame)
         self.cbb3.grid(row=2,column=5)
-        self.cbb3.config(textvariable = self.current_table1, state = "readonly",values=["genre","cheveux"])
+        self.cbb3.config(textvariable = self.current_table1, state = "readonly",values=self.list2)
         
               
         def newselection(event):
-            print(self.current_table1.get())
-            if ((self.current_table1.get())=="genre"):
+            
                 self.list.clear()
                 
-    
-                self.list.append(["homme"])
-                self.list.append(["femme"])
+                a = int(data["caracteristique"][self.list2.index(self.current_table1.get())]["Nreponse"])
+                for i in range (1,a+1):
+                    b = str(i)
+                    self.list.append(data["caracteristique"][self.list2.index(self.current_table1.get())]["R"+b])
                 self.cbb4=Combobox(frame)
                 self.current_table2 = StringVar()
                 self.cbb4.config(textvariable = self.current_table2, state = "readonly", values = self.list)
+           
                 self.cbb4.grid(row=2,column=7)
                 
-            if ((self.current_table1.get())=="cheveux"):
-                self.list.clear()
-                self.list.append(["marron"])
-                self.list.append(["noire"])
-                self.list.append(["blanc"])
-                self.list.append(["roux"])
-                self.cbb4=Combobox(frame)
-                self.current_table2 = StringVar()
-                self.cbb4.config(textvariable = self.current_table2, state = "readonly", values = self.list)
-                self.cbb4.grid(row=2,column=7)
+            
+            
+                
+            
+               
+               
+            
                 
         
+       
         self.cbb3.bind("<<ComboboxSelected>>", newselection)
-        
         
         self.current_table1.get()
         
