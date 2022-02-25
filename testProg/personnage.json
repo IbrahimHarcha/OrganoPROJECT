@@ -2,6 +2,15 @@
     "images": "personnages/",
     "ligne":"3",
     "colonne":"8",
+    "nbCara":"4",
+    "caracteristique": [
+        {"index":0,"nom":"cheveux","Nreponse":"4","R1":"blanc","R2":"roux","R3":"marron","R4":"noir"},
+        {"index":1,"nom":"genre","Nreponse":"2","R1":"homme","R2":"femme"},
+        {"index":2,"nom":"lunettes","Nreponse":"2","R1":"oui","R2":"non"},
+        {"index":3,"nom":"chauve","Nreponse":"2","R1":"oui","R2":"non"},
+        {"index":4,"nom":"chapeau","Nreponse":"2","R1":"oui","R2":"non"}],
+        
+   
     "possibilites": [
         {"index":0,"fichier":"samuel.png", "prenom":"Samuel", "genre": "homme", "cheveux":"blanc", "lunettes": "oui", "chauve":"oui","chapeau":"non"},
         {"index":1,"fichier":"leon.png", "prenom":"Léon", "genre": "homme", "cheveux":"blanc", "lunettes": "oui", "chauve":"non","chapeau":"non"},
@@ -26,8 +35,32 @@
         {"index":20,"fichier":"tony.png", "prenom":"Tony", "genre": "homme", "cheveux":"roux", "lunettes": "non", "chauve":"oui","chapeau":"non"},
         {"index":21,"fichier":"felix.png", "prenom":"Félix", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"oui"},
         {"index":22,"fichier":"charlie.png", "prenom":"Charlie", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
-        {"index":23,"fichier":"anna.png", "prenom":"Anna", "genre": "femme", "cheveux":"noir", "lunettes": "non", "chauve":"non","chapeau":"non"}
-                
+        {"index":23,"fichier":"anna.png", "prenom":"Anna", "genre": "femme", "cheveux":"noir", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":24,"fichier":"samuelx.png", "prenom":"Samuel", "genre": "homme", "cheveux":"blanc", "lunettes": "oui", "chauve":"oui","chapeau":"non"},
+        {"index":25,"fichier":"Leonx.png", "prenom":"Léon", "genre": "homme", "cheveux":"blanc", "lunettes": "oui", "chauve":"non","chapeau":"non"},
+        {"index":26,"fichier":"simonx.png", "prenom":"Simon", "genre": "homme", "cheveux":"blanc", "lunettes": "oui", "chauve":"non","chapeau":"non"},
+        {"index":27,"fichier":"martinx.png", "prenom":"Martin", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"oui"},
+        {"index":28,"fichier":"lucx.png", "prenom":"Luc", "genre": "homme", "cheveux":"noir", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":29,"fichier":"clarax.png", "prenom":"Clara", "genre": "femme", "cheveux":"roux", "lunettes": "oui", "chauve":"non","chapeau":"oui"},
+        {"index":30,"fichier":"anitax.png", "prenom":"Anita", "genre": "femme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":31,"fichier":"Alfredx.png", "prenom":"Alfred", "genre": "homme", "cheveux":"roux", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":32,"fichier":"suzanex.png", "prenom":"Suzane", "genre": "femme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":33,"fichier":"romeox.png", "prenom":"Roméo", "genre": "homme", "cheveux":"marron", "lunettes": "non", "chauve":"oui","chapeau":"non"},
+        {"index":34,"fichier":"omarx.png", "prenom":"Omar", "genre": "homme", "cheveux":"roux", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":35,"fichier":"manux.png", "prenom":"Manu", "genre": "homme", "cheveux":"marron", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":36,"fichier":"lucasx.png", "prenom":"Lucas", "genre": "homme", "cheveux":"roux", "lunettes": "non", "chauve":"oui","chapeau":"non"},
+        {"index":37,"fichier":"mariox.png", "prenom":"Mario", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":38,"fichier":"Jeremiex.png", "prenom":"Jérémie", "genre": "homme", "cheveux":"marron", "lunettes": "non", "chauve":"non","chapeau":"oui"},
+        {"index":39,"fichier":"maxx.png", "prenom":"Max", "genre": "homme", "cheveux":"noir", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":40,"fichier":"timeox.png", "prenom":"Timéo", "genre": "homme", "cheveux":"noir", "lunettes": "oui", "chauve":"oui","chapeau":"non"},
+        {"index":41,"fichier":"oscarx.png", "prenom":"Oscar", "genre": "homme", "cheveux":"marron", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":42,"fichier":"Ericx.png", "prenom":"Eric", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":43,"fichier":"mariax.png", "prenom":"Maria", "genre": "femme", "cheveux":"marron", "lunettes": "non", "chauve":"non","chapeau":"oui"},
+        {"index":44,"fichier":"tonyx.png", "prenom":"Tony", "genre": "homme", "cheveux":"roux", "lunettes": "non", "chauve":"oui","chapeau":"non"},
+        {"index":45,"fichier":"Felixx.png", "prenom":"Félix", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"oui"},
+        {"index":46,"fichier":"charliex.png", "prenom":"Charlie", "genre": "homme", "cheveux":"blanc", "lunettes": "non", "chauve":"non","chapeau":"non"},
+        {"index":47,"fichier":"Annax.png", "prenom":"Anna", "genre": "femme", "cheveux":"noir", "lunettes": "non", "chauve":"non","chapeau":"non"}
+        
         
         
         
