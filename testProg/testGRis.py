@@ -261,10 +261,27 @@ class Frame2():
     def enlever():
         pass
     def valider(self):
-         print(self.current_table2.get())
-         print(self.current_table1.get()) 
-    def modetriche():
-        pass
+        if self.a==1 :
+            self.list3.clear()
+            self.list3.append(2)
+            self.lblV=Label(text="nombre de personnages a cochés :"+str(self.list3),font=("Arial", 15))
+            self.lblV.grid(row=2,column=0)
+        
+        
+        
+    
+    
+    def modetriche(self):
+        if self.a==0 :
+            self.a=1
+            self.lbl=Label(text="nombre de personnages a cochés :",font=("Arial", 15))
+            self.lbl.grid(row=2,column=0)
+            print(self.a)
+        else:
+                self.a=0
+                self.lbl.grid_forget()
+                self.lblV.grid_forget()
+                print(self.a)
     
 
 
