@@ -322,11 +322,12 @@ class Frame2():
                         self.caseX=self.caseX-1
                     
                     self.nbcase=len(self.listR)
-                    print(self.nbcase)
+                    if(self.nbcase)==23:
+                        self.lbl=Label(text="PERDU",font=("Arial", 15))
+                        self.lbl.grid(row=0,column=0)
             print(self.listR)
             self.lbl=Label(text="nombre de personnages a cochés :"+str(self.caseX),font=("Arial", 15))
             self.lbl.grid(row=2,column=0)
-            
             
 
 
