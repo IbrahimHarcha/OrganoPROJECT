@@ -176,28 +176,33 @@ class Frame1():
         pass
 
 class Frame2():
+    
     def __init__(self,root):
+        def two_funcs(*funcs):
+            def two_funcs(*args, **kwargs):
+                for f in funcs:
+                    f(*args, **kwargs)
+            return two_funcs
+        l=int(data["ligne"])
+        c=int(data["colonne"])
+        self.a=0
         n=int(data["nbCara"])
         frame=Frame(root,padx=100,pady=1,bd=1)
         frame.grid(row=1,column=0)
+        self.caseX=((l*c))
+        self.nbcase=0
         self.list=[]
         self.list2=[]
-        self.lbl=Label(frame,text="Votre question :",font=("Arial", 15))
+        self.list3=[]
+        self.listR=[]
+        self.lbl=Label(frame,text="Votre personnage a  :",font=("Arial", 15))
         self.lbl.grid(row=0,column=0)
-        self.btn=Button(frame,text="Ajouter",command=self.ajouter,font=("MS PGothic", 12),bg='beige')
-        self.btn.grid(row=2,column=0)
-        self.btn2=Button(frame,text="Enlever",command=self.enlever,font=("MS PGothic", 12),bg='beige')
-        self.btn2.grid(row=2,column=1)
-        self.btn3=Button(frame,text="Valider",command=self.valider,font=("MS PGothic", 15),bg='beige')
+        
+        self.btn3=Button(frame,text="Valider",command=self.valider,font=("MS PGothic", 15),bg='beige') ####self.modetriche
         self.btn3.grid(row=4,column=4)
     
 
-        self.cbb1=Combobox(frame,values=["lunettes","chauve","chapeau"])
-        self.cbb1.grid(row=0,column=5)
-        self.lvide2=Label(frame,text="   ")
-        self.lvide2.grid(row=0,column=6)
-        self.cbb2=Combobox(frame,values=["oui","non"])
-        self.cbb2.grid(row=0,column=7)
+        
         self.current_table1 = StringVar()
         
         for i in range(0,n):
@@ -242,8 +247,7 @@ class Frame2():
         
         
         
-        self.cbb5=Combobox(frame,values=["Or","And"])
-        self.cbb5.grid(row=1,column=4)
+       
         
 
         self.btn4=Button(frame,text="Mode Triche",command=self.modetriche,font=("MS PGothic", 12),bg='beige')
@@ -255,17 +259,18 @@ class Frame2():
         for j in range(0,9):
             Grid.columnconfigure(frame,j,weight=1)
 
-        
-    def ajouter():
-        pass
-    def enlever():
-        pass
-    def valider(self):
-        if self.a==1 :
-            self.list3.clear()
-            self.list3.append(2)
-            self.lblV=Label(text="nombre de personnages a cochés :"+str(self.list3),font=("Arial", 15))
-            self.lblV.grid(row=2,column=0)
+   
+    
+                
+            
+            
+               
+                    
+
+            
+            
+            
+            
         
         
         
@@ -273,19 +278,59 @@ class Frame2():
     
     def modetriche(self):
         if self.a==0 :
-            self.a=1
-            self.lbl=Label(text="nombre de personnages a cochés :",font=("Arial", 15))
+            self.a=self.a+1
+            
+            self.lbl=Label(text="nombre de personnages a cochés :"+str(self.nbcase),font=("Arial", 15))
             self.lbl.grid(row=2,column=0)
-            print(self.a)
+            
         else:
-                self.a=0
+                
                 self.lbl.grid_forget()
-                self.lblV.grid_forget()
-                print(self.a)
-    
+                
+                self.a=self.a-1
+                
+   
+    def valider(self):
+        if self.a==0:
+            
+            self.listR.clear()
+            l=int(data["ligne"])
+            c=int(data["colonne"])
+            
+            
+                
+            
+            
+             
+            
+            
+            
+                       
+        if self.a==1 :
+            self.nbcase=0
+            
+            
+            l=int(data["ligne"])
+            c=int(data["colonne"])
+            
+            
+            for i in range(0,((l*c)-1)):
+                if((data2["possibilites"][i][self.current_table1.get()])==self.current_table2.get()) :
+                    print(data2["possibilites"][i]["prenom"])
+                    if not data2["possibilites"][i]["prenom"] in self.listR :
+                        self.listR.append(data2["possibilites"][i]["prenom"])
+                        self.caseX=self.caseX-1
+                    
+                    self.nbcase=len(self.listR)
+                    print(self.nbcase)
+            print(self.listR)
+            self.lbl=Label(text="nombre de personnages a cochés :"+str(self.caseX),font=("Arial", 15))
+            self.lbl.grid(row=2,column=0)
+            
+            
 
 
-        
+
 
 mainframe = Frame(app,padx=10,pady=10,bg='beige', borderwidth=1)
 mainframe.grid(row=0,column=0)
