@@ -290,7 +290,7 @@ class Frame2():
                 self.a=self.a-1
                 
    
-    def valider(self):
+     def valider(self):
         if self.a==0:
             
             self.listR.clear()
@@ -320,14 +320,20 @@ class Frame2():
                     if not data2["possibilites"][i]["prenom"] in self.listR :
                         self.listR.append(data2["possibilites"][i]["prenom"])
                         self.caseX=self.caseX-1
+                        print(self.caseX)
                     
                     self.nbcase=len(self.listR)
-                    if(self.nbcase)==23:
-                        self.lbl=Label(text="PERDU",font=("Arial", 15))
-                        self.lbl.grid(row=0,column=0)
+                    
             print(self.listR)
             self.lbl=Label(text="nombre de personnages a cochés :"+str(self.caseX),font=("Arial", 15))
             self.lbl.grid(row=2,column=0)
+            if(self.caseX)==(1):
+                        self.lbl=Label(text="PERDU",font=("Arial", 15))
+                        self.lbl.grid(row=0,column=0)
+            if(self.caseX)==(2):
+                        self.lbl=Label(text="GAGNIER",font=("Arial", 15))
+                        self.lbl.grid(row=0,column=0)
+            
             
 
 
